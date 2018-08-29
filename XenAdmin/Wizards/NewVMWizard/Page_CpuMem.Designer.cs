@@ -111,10 +111,10 @@ namespace XenAdmin.Wizards.NewVMWizard
             this.tableLayoutPanel1.Controls.Add(this.labelInvalidVCPUWarning, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxTopology, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label5, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.spinnerStatMax, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.spinnerStatMax, 0, 8);
             this.tableLayoutPanel1.Controls.Add(this.labelVCPUs, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.spinnerDynMax, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.spinnerDynMin, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.spinnerDynMax, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.spinnerDynMin, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.labelTopology, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.comboBoxVCPUs, 1, 1);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -187,9 +187,9 @@ namespace XenAdmin.Wizards.NewVMWizard
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label labelTopology;
         private Controls.CPUTopologyComboBox comboBoxTopology;
-        private System.Windows.Forms.Label labelInvalidVCPUWarning;
         private System.Windows.Forms.ComboBox comboBoxVCPUs;
         private System.Windows.Forms.ComboBox comboBoxInitialVCPUs;
         private System.Windows.Forms.Label labelInitialVCPUs;
+        private System.Windows.Forms.Label labelInvalidVCPUWarning;
     }
 }

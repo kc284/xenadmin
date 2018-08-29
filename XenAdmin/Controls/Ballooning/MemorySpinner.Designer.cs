@@ -31,11 +31,9 @@ namespace XenAdmin.Controls.Ballooning
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemorySpinner));
             this.Spinner = new System.Windows.Forms.NumericUpDown();
             this.NameLabel = new System.Windows.Forms.Label();
-            this.iconBox = new System.Windows.Forms.PictureBox();
             this.SpinnerUnits = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.Spinner)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconBox)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,12 +55,6 @@ namespace XenAdmin.Controls.Ballooning
             resources.ApplyResources(this.NameLabel, "NameLabel");
             this.NameLabel.Name = "NameLabel";
             // 
-            // iconBox
-            // 
-            resources.ApplyResources(this.iconBox, "iconBox");
-            this.iconBox.Name = "iconBox";
-            this.iconBox.TabStop = false;
-            // 
             // SpinnerUnits
             // 
             resources.ApplyResources(this.SpinnerUnits, "SpinnerUnits");
@@ -71,10 +63,9 @@ namespace XenAdmin.Controls.Ballooning
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.iconBox, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.SpinnerUnits, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.NameLabel, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Spinner, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.SpinnerUnits, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.NameLabel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Spinner, 1, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // MemorySpinner
@@ -85,7 +76,6 @@ namespace XenAdmin.Controls.Ballooning
             this.DoubleBuffered = true;
             this.Name = "MemorySpinner";
             ((System.ComponentModel.ISupportInitialize)(this.Spinner)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconBox)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -96,7 +86,6 @@ namespace XenAdmin.Controls.Ballooning
 
         private System.Windows.Forms.NumericUpDown Spinner;
         private System.Windows.Forms.Label NameLabel;
-        private System.Windows.Forms.PictureBox iconBox;
         private System.Windows.Forms.Label SpinnerUnits;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }

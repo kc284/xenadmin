@@ -93,7 +93,7 @@ namespace XenAdmin.Dialogs
                 if (value < min)
                     min = value;
                 memorySpinner.SetRange(0, MAXIMUM_DOM0_MEMORY_GB * Util.BINARY_GIGA); // reset spinner limits
-                memorySpinner.Initialize(Messages.CONTROL_DOMAIN_MEMORY_LABEL, null, value, max);
+                memorySpinner.Initialize(Messages.CONTROL_DOMAIN_MEMORY_LABEL, value, max);
                 memorySpinner.SetRange(min, max);
             }
             origMemory = memorySpinner.Value;
