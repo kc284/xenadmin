@@ -92,19 +92,19 @@ namespace XenAdmin.Wizards.NewVMWizard
 
             if (memoryMode == 1)
             {
-                spinnerDynMin.Initialize(Messages.MEMORY_COLON, null, Template.memory_static_max, Template.memory_static_max);
+                spinnerDynMin.Initialize(Messages.MEMORY_COLON, Template.memory_static_max, Template.memory_static_max);
                 spinnerDynMax.Visible = spinnerStatMax.Visible = false;
             }
             else
             {
                 spinnerDynMax.Visible = true;
-                spinnerDynMin.Initialize(Messages.DYNAMIC_MIN_COLON, null, Template.memory_dynamic_min, Template.memory_static_max);
+                spinnerDynMin.Initialize(Messages.DYNAMIC_MIN_COLON, Template.memory_dynamic_min, Template.memory_static_max);
                 FreeSpinnerLimits();  // same as CA-33831
-                spinnerDynMax.Initialize(Messages.DYNAMIC_MAX_COLON, null, Template.memory_dynamic_max, Template.memory_static_max);
+                spinnerDynMax.Initialize(Messages.DYNAMIC_MAX_COLON, Template.memory_dynamic_max, Template.memory_static_max);
                 if (memoryMode == 3)
                 {
                     FreeSpinnerLimits();
-                    spinnerStatMax.Initialize(Messages.STATIC_MAX_COLON, null, Template.memory_static_max, Template.memory_static_max);
+                    spinnerStatMax.Initialize(Messages.STATIC_MAX_COLON, Template.memory_static_max, Template.memory_static_max);
                 }
                 else
                     spinnerStatMax.Visible = false;

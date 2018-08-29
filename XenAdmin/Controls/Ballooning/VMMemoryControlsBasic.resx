@@ -126,20 +126,20 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="spinnerPanel.ColumnCount" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>4</value>
   </data>
   <data name="memorySpinnerDynMin.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
+    <value>Left</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="memorySpinnerDynMin.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 96</value>
+    <value>144, 96</value>
   </data>
   <data name="memorySpinnerDynMin.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="memorySpinnerDynMin.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 31</value>
+    <value>232, 31</value>
   </data>
   <data name="memorySpinnerDynMin.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -157,16 +157,16 @@
     <value>0</value>
   </data>
   <data name="memorySpinnerDynMax.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
+    <value>Left</value>
   </data>
   <data name="memorySpinnerDynMax.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 127</value>
+    <value>144, 127</value>
   </data>
   <data name="memorySpinnerDynMax.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="memorySpinnerDynMax.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 31</value>
+    <value>232, 31</value>
   </data>
   <data name="memorySpinnerDynMax.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -207,6 +207,66 @@
   <data name="&gt;&gt;vmShinyBar.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="pictureBoxDynMin.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="pictureBoxDynMin.Location" type="System.Drawing.Point, System.Drawing">
+    <value>134, 105</value>
+  </data>
+  <data name="pictureBoxDynMin.Size" type="System.Drawing.Size, System.Drawing">
+    <value>7, 13</value>
+  </data>
+  <data name="pictureBoxDynMin.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="pictureBoxDynMin.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="pictureBoxDynMin.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxDynMin.Name" xml:space="preserve">
+    <value>pictureBoxDynMin</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxDynMin.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxDynMin.Parent" xml:space="preserve">
+    <value>spinnerPanel</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxDynMin.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="pictureBoxDynMax.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Right</value>
+  </data>
+  <data name="pictureBoxDynMax.Location" type="System.Drawing.Point, System.Drawing">
+    <value>134, 136</value>
+  </data>
+  <data name="pictureBoxDynMax.Size" type="System.Drawing.Size, System.Drawing">
+    <value>7, 13</value>
+  </data>
+  <data name="pictureBoxDynMax.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="pictureBoxDynMax.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="pictureBoxDynMax.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxDynMax.Name" xml:space="preserve">
+    <value>pictureBoxDynMax</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxDynMax.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxDynMax.Parent" xml:space="preserve">
+    <value>spinnerPanel</value>
+  </data>
+  <data name="&gt;&gt;pictureBoxDynMax.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="spinnerPanel.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 10</value>
   </data>
@@ -214,7 +274,7 @@
     <value>3</value>
   </data>
   <data name="spinnerPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>506, 158</value>
+    <value>507, 158</value>
   </data>
   <data name="spinnerPanel.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -232,7 +292,7 @@
     <value>0</value>
   </data>
   <data name="spinnerPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="memorySpinnerDynMin" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="memorySpinnerDynMax" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="vmShinyBar" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="AutoSize,0" /&gt;&lt;Rows Styles="Percent,100,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="memorySpinnerDynMin" Row="1" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="memorySpinnerDynMax" Row="2" RowSpan="1" Column="2" ColumnSpan="1" /&gt;&lt;Control Name="vmShinyBar" Row="0" RowSpan="1" Column="0" ColumnSpan="4" /&gt;&lt;Control Name="pictureBoxDynMin" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="pictureBoxDynMax" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,AutoSize,0,AutoSize,0,Percent,50" /&gt;&lt;Rows Styles="Percent,100,AutoSize,0,AutoSize,0" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <data name="radioFixed.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Left</value>
@@ -292,7 +352,7 @@
     <value>3, 10, 3, 3</value>
   </data>
   <data name="groupBoxOn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>515, 187</value>
+    <value>516, 187</value>
   </data>
   <data name="groupBoxOn.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -430,7 +490,7 @@
     <value>5</value>
   </data>
   <data name="tableLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>538, 289</value>
+    <value>539, 289</value>
   </data>
   <data name="tableLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -490,7 +550,7 @@
     <value>GrowAndShrink</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>544, 295</value>
+    <value>545, 295</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>VMMemoryControlsBasic</value>

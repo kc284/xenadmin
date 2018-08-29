@@ -33,6 +33,8 @@ namespace XenAdmin.Controls.Ballooning
             this.memorySpinnerDynMin = new XenAdmin.Controls.Ballooning.MemorySpinner();
             this.memorySpinnerDynMax = new XenAdmin.Controls.Ballooning.MemorySpinner();
             this.vmShinyBar = new XenAdmin.Controls.Ballooning.VMShinyBar();
+            this.pictureBoxDynMin = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDynMax = new System.Windows.Forms.PictureBox();
             this.radioFixed = new System.Windows.Forms.RadioButton();
             this.radioDynamic = new System.Windows.Forms.RadioButton();
             this.groupBoxOn = new System.Windows.Forms.GroupBox();
@@ -42,6 +44,8 @@ namespace XenAdmin.Controls.Ballooning
             this.memorySpinnerFixed = new XenAdmin.Controls.Ballooning.MemorySpinner();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.spinnerPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDynMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDynMax)).BeginInit();
             this.groupBoxOn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconDMCUnavailable)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -50,9 +54,11 @@ namespace XenAdmin.Controls.Ballooning
             // spinnerPanel
             // 
             resources.ApplyResources(this.spinnerPanel, "spinnerPanel");
-            this.spinnerPanel.Controls.Add(this.memorySpinnerDynMin, 0, 1);
-            this.spinnerPanel.Controls.Add(this.memorySpinnerDynMax, 0, 2);
+            this.spinnerPanel.Controls.Add(this.memorySpinnerDynMin, 2, 1);
+            this.spinnerPanel.Controls.Add(this.memorySpinnerDynMax, 2, 2);
             this.spinnerPanel.Controls.Add(this.vmShinyBar, 0, 0);
+            this.spinnerPanel.Controls.Add(this.pictureBoxDynMin, 1, 1);
+            this.spinnerPanel.Controls.Add(this.pictureBoxDynMax, 1, 2);
             this.spinnerPanel.Name = "spinnerPanel";
             // 
             // memorySpinnerDynMin
@@ -71,11 +77,26 @@ namespace XenAdmin.Controls.Ballooning
             // 
             // vmShinyBar
             // 
+            this.spinnerPanel.SetColumnSpan(this.vmShinyBar, 4);
             this.vmShinyBar.Increment = 0D;
             resources.ApplyResources(this.vmShinyBar, "vmShinyBar");
             this.vmShinyBar.Name = "vmShinyBar";
             this.vmShinyBar.TabStop = false;
             this.vmShinyBar.SliderDragged += new System.EventHandler(this.vmShinyBar_SliderDragged);
+            // 
+            // pictureBoxDynMin
+            // 
+            resources.ApplyResources(this.pictureBoxDynMin, "pictureBoxDynMin");
+            this.pictureBoxDynMin.Image = global::XenAdmin.Properties.Resources.memory_dynmin_slider_small;
+            this.pictureBoxDynMin.Name = "pictureBoxDynMin";
+            this.pictureBoxDynMin.TabStop = false;
+            // 
+            // pictureBoxDynMax
+            // 
+            resources.ApplyResources(this.pictureBoxDynMax, "pictureBoxDynMax");
+            this.pictureBoxDynMax.Image = global::XenAdmin.Properties.Resources.memory_dynmax_slider_small;
+            this.pictureBoxDynMax.Name = "pictureBoxDynMax";
+            this.pictureBoxDynMax.TabStop = false;
             // 
             // radioFixed
             // 
@@ -150,6 +171,9 @@ namespace XenAdmin.Controls.Ballooning
             this.DoubleBuffered = true;
             this.Name = "VMMemoryControlsBasic";
             this.spinnerPanel.ResumeLayout(false);
+            this.spinnerPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDynMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDynMax)).EndInit();
             this.groupBoxOn.ResumeLayout(false);
             this.groupBoxOn.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconDMCUnavailable)).EndInit();
@@ -174,5 +198,7 @@ namespace XenAdmin.Controls.Ballooning
         private MemorySpinner memorySpinnerFixed;
         private MemorySpinner memorySpinnerDynMax;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.PictureBox pictureBoxDynMin;
+        private System.Windows.Forms.PictureBox pictureBoxDynMax;
     }
 }

@@ -36,7 +36,6 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using XenAPI;
 
 
 namespace XenAdmin.Controls.Ballooning
@@ -62,11 +61,10 @@ namespace XenAdmin.Controls.Ballooning
 
             // Spinners
             FreeSpinnerRanges();
-            static_min = vm0.memory_static_min;
 
-            memorySpinnerDynMin.Initialize(Messages.DYNAMIC_MIN_AMP, null, vm0.memory_dynamic_min, vm0.memory_static_max);
-            memorySpinnerDynMax.Initialize(Messages.DYNAMIC_MAX_AMP, null, vm0.memory_dynamic_max, vm0.memory_static_max);
-            memorySpinnerStatMax.Initialize(Messages.STATIC_MAX_AMP, null, vm0.memory_static_max, vm0.memory_static_max);
+            memorySpinnerDynMin.Initialize(Messages.DYNAMIC_MIN_AMP, vm0.memory_dynamic_min, vm0.memory_static_max);
+            memorySpinnerDynMax.Initialize(Messages.DYNAMIC_MAX_AMP, vm0.memory_dynamic_max, vm0.memory_static_max);
+            memorySpinnerStatMax.Initialize(Messages.STATIC_MAX_AMP, vm0.memory_static_max, vm0.memory_static_max);
             SetIncrements();
             SetSpinnerRanges();
             firstPaint = false;
@@ -113,7 +111,8 @@ namespace XenAdmin.Controls.Ballooning
                 if (memorySpinnerDynMin.Value < min)
                 {
                     FreeSpinnerRanges();
-                    memorySpinnerDynMin.Initialize(Messages.DYNAMIC_MIN_AMP, null, min, RoundingBehaviour.Up);  // This will also force DynMax up if necessary when its range is set in SetSpinnerRanges()
+                    memorySpinnerDynMin.Initialize(Messages.DYNAMIC_MIN_AMP, min, RoundingBehaviour.Up);
+                    // This will also force DynMax up if necessary when its range is set in SetSpinnerRanges()
                 }
                 SetIncrements();
             }

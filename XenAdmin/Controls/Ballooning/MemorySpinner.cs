@@ -44,7 +44,7 @@ namespace XenAdmin.Controls.Ballooning
         public event EventHandler SpinnerValueChanged;
         private double valueMB;
         private string previousUnitsValue;
-        private bool initializing= true;
+        private bool initializing = true;
 
         public MemorySpinner()
         {
@@ -52,28 +52,19 @@ namespace XenAdmin.Controls.Ballooning
             previousUnitsValue = Messages.VAL_GIGB;
         }
 
-        public void Initialize(string name, Image icon, double amount, double static_max)
+        public void Initialize(string name, double amount, double static_max)
         {
             amount = Util.CorrectRoundingErrors(amount);
 
-            if(static_max <= Util.BINARY_GIGA)
-            {
-                Units = Messages.VAL_MEGB;              
-            }
-            else
-            {
-                Units = Messages.VAL_GIGB;
-            }
+            Units = static_max <= Util.BINARY_GIGA ? Messages.VAL_MEGB : Messages.VAL_GIGB;
             ChangeSpinnerSettings();
             previousUnitsValue = Units;
-            Initialize(name, icon, amount, RoundingBehaviour.None);
+            Initialize(name, amount, RoundingBehaviour.None);
         }
 
-        public void Initialize(string name, Image icon, double amount, RoundingBehaviour rounding)
+        public void Initialize(string name, double amount, RoundingBehaviour rounding)
         {
             NameLabel.Text = name;
-            if (icon != null && iconBox.Image == null)  // without this line, setting iconBox.Image causes another repaint, hence an infinite loop
-                iconBox.Image = icon;
             ValueMB = Util.ToMB(amount, rounding);
             setSpinnerValueDisplay(amount);
             initializing = false;
