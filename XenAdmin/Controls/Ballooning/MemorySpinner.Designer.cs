@@ -30,7 +30,6 @@ namespace XenAdmin.Controls.Ballooning
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemorySpinner));
             this.Spinner = new System.Windows.Forms.NumericUpDown();
-            this.NameLabel = new System.Windows.Forms.Label();
             this.SpinnerUnits = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.Spinner)).BeginInit();
@@ -50,11 +49,6 @@ namespace XenAdmin.Controls.Ballooning
             this.Spinner.ValueChanged += new System.EventHandler(this.Spinner_ValueChanged);
             this.Spinner.Leave += new System.EventHandler(this.Spinner_Leave);
             // 
-            // NameLabel
-            // 
-            resources.ApplyResources(this.NameLabel, "NameLabel");
-            this.NameLabel.Name = "NameLabel";
-            // 
             // SpinnerUnits
             // 
             resources.ApplyResources(this.SpinnerUnits, "SpinnerUnits");
@@ -63,9 +57,8 @@ namespace XenAdmin.Controls.Ballooning
             // tableLayoutPanel1
             // 
             resources.ApplyResources(this.tableLayoutPanel1, "tableLayoutPanel1");
-            this.tableLayoutPanel1.Controls.Add(this.SpinnerUnits, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.NameLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Spinner, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.SpinnerUnits, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.Spinner, 0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             // 
             // MemorySpinner
@@ -79,13 +72,13 @@ namespace XenAdmin.Controls.Ballooning
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.NumericUpDown Spinner;
-        private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label SpinnerUnits;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
