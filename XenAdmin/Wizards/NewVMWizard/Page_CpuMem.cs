@@ -231,7 +231,7 @@ namespace XenAdmin.Wizards.NewVMWizard
                 memoryMode == 2 ? maxMemAllowed : SelectedMemoryStaticMax);
 
             spinnerStatMax.SetRange(SelectedMemoryDynamicMax, maxMemAllowed);
-            ShowMemoryMinMaxInformation(labelDynMaxInfo, SelectedMemoryDynamicMax, maxMemAllowed);
+            ShowMemoryMinMaxInformation(labelStatMaxInfo, SelectedMemoryDynamicMax, maxMemAllowed);
         }
 
         public void DisableMemoryControls()
