@@ -213,7 +213,7 @@ namespace XenAdmin.Wizards.NewVMWizard
             if (memoryMode == 1)
             {
                 spinnerDynMin.SetRange(min, maxMemAllowed);
-                ShowMemoryMinMaxInformation();
+                ShowMemoryMinMaxInformation(labelDynMinInfo, min, maxMemAllowed);
                 return;
             }
             long min2 = (long)(SelectedMemoryStaticMax * memoryRatio);
@@ -223,11 +223,15 @@ namespace XenAdmin.Wizards.NewVMWizard
             if (max < min)
                 max = min;
             spinnerDynMin.SetRange(min, max);
+            ShowMemoryMinMaxInformation(labelDynMinInfo, min, max);
+
             spinnerDynMax.SetRange(SelectedMemoryDynamicMin,
                 memoryMode == 2 ? maxMemAllowed : SelectedMemoryStaticMax);
-            spinnerStatMax.SetRange(SelectedMemoryDynamicMax, maxMemAllowed);
+            ShowMemoryMinMaxInformation(labelDynMaxInfo, SelectedMemoryDynamicMin,
+                memoryMode == 2 ? maxMemAllowed : SelectedMemoryStaticMax);
 
-            ShowMemoryMinMaxInformation();
+            spinnerStatMax.SetRange(SelectedMemoryDynamicMax, maxMemAllowed);
+            ShowMemoryMinMaxInformation(labelDynMaxInfo, SelectedMemoryDynamicMax, maxMemAllowed);
         }
 
         public void DisableMemoryControls()
@@ -390,11 +394,9 @@ namespace XenAdmin.Wizards.NewVMWizard
             }
         }
 
-        private void ShowMemoryMinMaxInformation()
+        private void ShowMemoryMinMaxInformation(Label label, double min, double max)
         {
-            labelDynMaxInfo.Text = string.Format(Messages.NEWVMWIZARD_CPUMEMPAGE_MEMORYINFO, "a", "b");
-            labelDynMinInfo.Text = string.Format(Messages.NEWVMWIZARD_CPUMEMPAGE_MEMORYINFO, "a", "b");
-            labelStatMaxInfo.Text = string.Format(Messages.NEWVMWIZARD_CPUMEMPAGE_MEMORYINFO, "a", "b");
+            label.Text = string.Format(Messages.NEWVMWIZARD_CPUMEMPAGE_MEMORYINFO, min, max);
         }
 
         private void vCPU_ValueChanged(object sender, EventArgs e)
