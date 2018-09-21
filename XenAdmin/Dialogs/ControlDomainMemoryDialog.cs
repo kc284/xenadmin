@@ -69,8 +69,8 @@ namespace XenAdmin.Dialogs
             Host_metrics metrics = host.Connection.Resolve(host.metrics);
             bool maintenanceMode = host.MaintenanceMode() || (metrics != null && !metrics.live);
 
-            maintenanceWarningImage.Visible = maintenanceWarningLabel.Visible = maintenanceModeLinkLabel.Visible = !maintenanceMode;
-            hostRebootWarningImage.Visible = hostRebootWarningLabel.Visible = maintenanceMode;
+            tplMaintenanceWarning.Visible = !maintenanceMode;
+            tplRebootWarning.Visible = maintenanceMode;
 
             memorySpinner.Enabled = maintenanceMode;
         }
@@ -93,7 +93,7 @@ namespace XenAdmin.Dialogs
                 if (value < min)
                     min = value;
                 memorySpinner.SetRange(0, MAXIMUM_DOM0_MEMORY_GB * Util.BINARY_GIGA); // reset spinner limits
-                memorySpinner.Initialize(Messages.CONTROL_DOMAIN_MEMORY_LABEL, value, max);
+                memorySpinner.Initialize(value, max);
                 memorySpinner.SetRange(min, max);
             }
             origMemory = memorySpinner.Value;

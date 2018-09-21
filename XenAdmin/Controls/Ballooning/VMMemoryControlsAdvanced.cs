@@ -62,9 +62,9 @@ namespace XenAdmin.Controls.Ballooning
             // Spinners
             FreeSpinnerRanges();
 
-            memorySpinnerDynMin.Initialize(Messages.DYNAMIC_MIN_AMP, vm0.memory_dynamic_min, vm0.memory_static_max);
-            memorySpinnerDynMax.Initialize(Messages.DYNAMIC_MAX_AMP, vm0.memory_dynamic_max, vm0.memory_static_max);
-            memorySpinnerStatMax.Initialize(Messages.STATIC_MAX_AMP, vm0.memory_static_max, vm0.memory_static_max);
+            memorySpinnerDynMin.Initialize(vm0.memory_dynamic_min, vm0.memory_static_max);
+            memorySpinnerDynMax.Initialize(vm0.memory_dynamic_max, vm0.memory_static_max);
+            memorySpinnerStatMax.Initialize(vm0.memory_static_max, vm0.memory_static_max);
             SetIncrements();
             SetSpinnerRanges();
             firstPaint = false;
@@ -111,7 +111,7 @@ namespace XenAdmin.Controls.Ballooning
                 if (memorySpinnerDynMin.Value < min)
                 {
                     FreeSpinnerRanges();
-                    memorySpinnerDynMin.Initialize(Messages.DYNAMIC_MIN_AMP, min, RoundingBehaviour.Up);
+                    memorySpinnerDynMin.Initialize(min, RoundingBehaviour.Up);
                     // This will also force DynMax up if necessary when its range is set in SetSpinnerRanges()
                 }
                 SetIncrements();

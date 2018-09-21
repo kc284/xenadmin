@@ -142,9 +142,9 @@ namespace XenAdmin.Controls.Ballooning
 
             // Spinners
             FreeSpinnerRanges();
-            memorySpinnerDynMin.Initialize(Messages.DYNAMIC_MIN_AMP, vm0.memory_dynamic_min, vm0.memory_static_max);
-            memorySpinnerDynMax.Initialize(Messages.DYNAMIC_MAX_AMP, vm0.memory_dynamic_max, vm0.memory_static_max);
-            memorySpinnerFixed.Initialize("", vm0.memory_static_max, vm0.memory_static_max);
+            memorySpinnerDynMin.Initialize(vm0.memory_dynamic_min, vm0.memory_static_max);
+            memorySpinnerDynMax.Initialize(vm0.memory_dynamic_max, vm0.memory_static_max);
+            memorySpinnerFixed.Initialize(vm0.memory_static_max, vm0.memory_static_max);
             SetIncrements();
             SetSpinnerRanges();
             firstPaint = false;
@@ -199,7 +199,7 @@ namespace XenAdmin.Controls.Ballooning
                 FreeSpinnerRanges();
                 long min = (long)(static_max * GetMemoryRatio());
                 if (memorySpinnerDynMin.Value < min)
-                    memorySpinnerDynMin.Initialize(Messages.DYNAMIC_MIN_AMP, min, RoundingBehaviour.Up);
+                    memorySpinnerDynMin.Initialize(min, RoundingBehaviour.Up);
             }
             SetIncrements();
             SetSpinnerRanges();
@@ -244,8 +244,8 @@ namespace XenAdmin.Controls.Ballooning
 
         private void vmShinyBar_SliderDragged(object sender, EventArgs e)
         {
-            memorySpinnerDynMin.Initialize(Messages.DYNAMIC_MIN_AMP,  vmShinyBar.Dynamic_min, RoundingBehaviour.None);
-            memorySpinnerDynMax.Initialize(Messages.DYNAMIC_MAX_AMP,  vmShinyBar.Dynamic_max, RoundingBehaviour.None);
+            memorySpinnerDynMin.Initialize(vmShinyBar.Dynamic_min, RoundingBehaviour.None);
+            memorySpinnerDynMax.Initialize(vmShinyBar.Dynamic_max, RoundingBehaviour.None);
             memorySpinnerDynMin.Refresh();
             memorySpinnerDynMax.Refresh();
         }

@@ -52,19 +52,18 @@ namespace XenAdmin.Controls.Ballooning
             previousUnitsValue = Messages.VAL_GIGB;
         }
 
-        public void Initialize(string name, double amount, double static_max)
+        public void Initialize(double amount, double static_max)
         {
             amount = Util.CorrectRoundingErrors(amount);
 
             Units = static_max <= Util.BINARY_GIGA ? Messages.VAL_MEGB : Messages.VAL_GIGB;
             ChangeSpinnerSettings();
             previousUnitsValue = Units;
-            Initialize(name, amount, RoundingBehaviour.None);
+            Initialize(amount, RoundingBehaviour.None);
         }
 
-        public void Initialize(string name, double amount, RoundingBehaviour rounding)
+        public void Initialize(double amount, RoundingBehaviour rounding)
         {
-            NameLabel.Text = name;
             ValueMB = Util.ToMB(amount, rounding);
             setSpinnerValueDisplay(amount);
             initializing = false;
