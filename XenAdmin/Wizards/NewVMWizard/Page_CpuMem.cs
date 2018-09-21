@@ -213,6 +213,7 @@ namespace XenAdmin.Wizards.NewVMWizard
             if (memoryMode == 1)
             {
                 spinnerDynMin.SetRange(min, maxMemAllowed);
+                ShowMemoryMinMaxInformation();
                 return;
             }
             long min2 = (long)(SelectedMemoryStaticMax * memoryRatio);
@@ -225,6 +226,8 @@ namespace XenAdmin.Wizards.NewVMWizard
             spinnerDynMax.SetRange(SelectedMemoryDynamicMin,
                 memoryMode == 2 ? maxMemAllowed : SelectedMemoryStaticMax);
             spinnerStatMax.SetRange(SelectedMemoryDynamicMax, maxMemAllowed);
+
+            ShowMemoryMinMaxInformation();
         }
 
         public void DisableMemoryControls()
@@ -385,6 +388,13 @@ namespace XenAdmin.Wizards.NewVMWizard
             {
                 ErrorPanel.Visible = false;
             }
+        }
+
+        private void ShowMemoryMinMaxInformation()
+        {
+            labelDynMaxInfo.Text = string.Format(Messages.NEWVMWIZARD_CPUMEMPAGE_MEMORYINFO, "a", "b");
+            labelDynMinInfo.Text = string.Format(Messages.NEWVMWIZARD_CPUMEMPAGE_MEMORYINFO, "a", "b");
+            labelStatMaxInfo.Text = string.Format(Messages.NEWVMWIZARD_CPUMEMPAGE_MEMORYINFO, "a", "b");
         }
 
         private void vCPU_ValueChanged(object sender, EventArgs e)
