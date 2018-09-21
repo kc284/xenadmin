@@ -404,7 +404,7 @@ namespace XenAdmin.Wizards.NewVMWizard
 
         private string FormatMemory(double numberOfBytes)
         {
-            return Util.MemorySizeStringSuitableUnits(numberOfBytes, false, Messages.VAL_GB_ONE_DECIMAL);
+            return Util.MemorySizeStringSuitableUnits(numberOfBytes, true);
         }
 
         private void vCPU_ValueChanged(object sender, EventArgs e)
