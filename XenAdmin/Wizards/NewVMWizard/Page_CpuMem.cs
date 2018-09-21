@@ -94,12 +94,12 @@ namespace XenAdmin.Wizards.NewVMWizard
             {
                 spinnerDynMin.Initialize(Template.memory_static_max, Template.memory_static_max);
                 labelDynMin.Text = Messages.MEMORY_COLON;
-                labelDynMax.Visible = labelStatMax.Visible = spinnerDynMax.Visible = spinnerStatMax.Visible = false;
+                labelDynMaxInfo.Visible = labelStatMaxInfo.Visible = labelDynMax.Visible = labelStatMax.Visible = spinnerDynMax.Visible = spinnerStatMax.Visible = false;
             }
             else
             {
                 labelDynMin.Text = Messages.DYNAMIC_MIN_COLON;
-                labelDynMax.Visible = spinnerDynMax.Visible = true;
+                labelDynMaxInfo.Visible = labelDynMax.Visible = spinnerDynMax.Visible = true;
                 spinnerDynMin.Initialize(Template.memory_dynamic_min, Template.memory_static_max);
                 FreeSpinnerLimits();  // same as CA-33831
                 spinnerDynMax.Initialize(Template.memory_dynamic_max, Template.memory_static_max);
@@ -109,7 +109,7 @@ namespace XenAdmin.Wizards.NewVMWizard
                     spinnerStatMax.Initialize(Template.memory_static_max, Template.memory_static_max);
                 }
                 else
-                    labelStatMax.Visible = spinnerStatMax.Visible = false;
+                    labelStatMaxInfo.Visible = labelStatMax.Visible = spinnerStatMax.Visible = false;
             }
 
             isVcpuHotplugSupported = Template.SupportsVcpuHotplug();
