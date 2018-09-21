@@ -396,7 +396,10 @@ namespace XenAdmin.Wizards.NewVMWizard
 
         private void ShowMemoryMinMaxInformation(Label label, double min, double max)
         {
-            label.Text = string.Format(Messages.NEWVMWIZARD_CPUMEMPAGE_MEMORYINFO, min, max);
+            label.Text = string.Format(
+                Messages.NEWVMWIZARD_CPUMEMPAGE_MEMORYINFO,
+                Util.MemorySizeStringSuitableUnits(min, false, Messages.VAL_GB_ONE_DECIMAL),
+                Util.MemorySizeStringSuitableUnits(max, false, Messages.VAL_GB_ONE_DECIMAL));
         }
 
         private void vCPU_ValueChanged(object sender, EventArgs e)
